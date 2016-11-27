@@ -52,7 +52,7 @@ function trackReducerChanges(reducer, hydrateState: ITrackHistoryState = initial
     }
 
     // Calculate the delta of the state (ignoring the stateHistory key)
-    const delta = calculateDiff(state, newAppState, ['stateHistory']);
+    const delta = calculateDiff(newAppState, state, ['stateHistory']);
 
     // Do nothing if delta is null
     if (typeof delta === 'undefined') {
